@@ -67,12 +67,12 @@ function App() {
     <>
       <Navber></Navber>
       <Hero></Hero>
-      <div className="sora max-w-7xl mx-auto ">
-        <div className="mt-32 pl-5 mb-7">
-          <h1 className="text-[#0E2954] font-medium  text-[32px]">
+      <div id="Main_div" className="sora max-w-7xl mx-auto ">
+        <div className="mt-32 pl-5 mb-7 text-center">
+          <h1 className="text-[#0E2954] font-semibold mb-3  text-4xl">
             Active Auctions
           </h1>
-          <p className="text-[#000000] text-[20px]">
+          <p className="text-[#000000] text-2xl mb-12">
             Discover and bid on extraordinary items
           </p>
         </div>

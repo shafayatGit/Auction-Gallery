@@ -1,6 +1,12 @@
 import React from "react";
 
 const Hero = () => {
+  const goExplore = () => {
+    const mainDiv = document.getElementById("Main_div");
+    mainDiv.scrollIntoView({
+      behavior: "smooth",
+    });
+  };
   return (
     <div className="hero  min-h-screen , bg" style={{}}>
       <div className="hero-overlay"></div>
@@ -13,7 +19,10 @@ const Hero = () => {
             Discover rare collectibles, luxury goods, and vintage <br />
             treasures in our curated auctions
           </p>
-          <button className="relative inline-flex items-center px-12 py-3 overflow-hidden text-lg font-medium text-white border-2 border-white rounded-full hover:text-white group hover:bg-gray-50">
+          <button
+            onClick={goExplore}
+            className="relative inline-flex items-center px-12 py-3 overflow-hidden text-lg font-medium text-white border-2 border-white rounded-full hover:text-white group hover:bg-gray-50"
+          >
             <span class="absolute left-0 block w-full h-0 transition-all bg-blue-500 opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease"></span>
             <span class="absolute right-0 flex items-center justify-start w-10 h-10 duration-300 transform translate-x-full group-hover:translate-x-0 ease">
               <svg

@@ -1,6 +1,12 @@
 import React from "react";
 
 const Navber = () => {
+  const GoExplore = () => {
+    const mainDiv = document.getElementById("Main_div");
+    mainDiv.scrollIntoView({
+      behavior: "smooth",
+    });
+  };
   return (
     <div className="navbar bg-base-100 shadow-sm flex justify-around max-w-7xl mx-auto poppins py-6">
       <div className="">
