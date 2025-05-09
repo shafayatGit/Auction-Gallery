@@ -1,3 +1,3 @@
 export const addFavorite = product => {
-    console.log("i am from local storage")
+    localStorage.setItem("favorite", JSON.stringify(product))
 }

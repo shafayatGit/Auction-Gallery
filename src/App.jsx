@@ -5,46 +5,69 @@ import Footer from "./assets/Footer/Footer";
 import Hero from "./assets/Hero/Hero";
 import Navber from "./assets/Navbar/Navber";
 import Products from "./assets/Products/Products";
+import Favorite from "./assets/Favorite/Favorite";
 import { toast } from "react-toastify";
+import { addFavorite } from ".";
+import { IoCheckmarkDoneCircle, IoRemoveCircleSharp } from "react-icons/io5";
 // import { addFavorite } from ".";
 
 function App() {
   const [favorite, setFavorite] = useState([]);
+  // console.log(favorite);
   const [oldPrice, setOldPrice] = useState(0);
 
   const handleLeftDiv = (product, price) => {
+    setFavorite([...favorite, product]);
+    // console.log(id);
     const productPrice = parseInt(price);
     const newPrice = oldPrice + productPrice;
     setOldPrice(newPrice);
-    setFavorite([...favorite, product]);
-    toast(`${product.title} is added`);
+
+    toast(
+      <div className="flex items-center gap-2">
+        <IoCheckmarkDoneCircle
+          className="text-green-700"
+          size={35}
+        ></IoCheckmarkDoneCircle>
+        <p className="text-black font-semibold">
+          {product.title} Has Been Added
+        </p>
+      </div>
+    );
     document.getElementById("no-item-container").className = "hidden";
-    document.getElementById(`${product.id}`).classList = "disabled:";
-    document.getElementById(`${product.id}`).classList = "";
+
     document.getElementById(`${product.id}`).classList =
-      "text-red-600 cursor-not-allowed";
+      "text-red-600 cursor-pointer";
   };
 
-  const handlePrice = (price) => {
-    console.log(price);
+  const handleRemove = (id, price, product) => {
+    // console.log(id);
+    const remainingFavorite = favorite.filter((fav) => fav.id !== id);
+    const productPrice = parseInt(price);
+    const newPrice = oldPrice - productPrice;
+    setOldPrice(newPrice);
+    setFavorite(remainingFavorite);
+    toast(
+      <div className="flex items-center gap-2">
+        <IoRemoveCircleSharp
+          className="text-red-700"
+          size={35}
+        ></IoRemoveCircleSharp>
+        <p className="text-black font-semibold">
+          {product.title} Has Been Removed
+        </p>
+      </div>
+    );
+    document.getElementById(`${product.id}`).classList = "block";
+    document.getElementById(`${product.id}`).classList = "";
+    document.getElementById(`${product.id}`).classList = "text-black";
   };
-  // console.log(favorite);
-
-  // const handleFav = (product) => {
-  //   setFavorite([product]);
-  //   toast(`${product.title} is added`);
-  // document.getElementById("no-item-container").className = "hidden";
-  //   document.getElementById(`${product.id}`).classList = "disabled:";
-  //   document.getElementById(`${product.id}`).classList = "";
-  //   document.getElementById(`${product.id}`).classList =
-  //     "text-red-600 cursor-not-allowed";
-  // };
 
   return (
     <>
       <Navber></Navber>
       <Hero></Hero>
-      <div className="sora max-w-7xl mx-auto ml-30">
+      <div className="sora max-w-7xl mx-auto ">
         <div className="mt-32 pl-5 mb-7">
           <h1 className="text-[#0E2954] font-medium  text-[32px]">
             Active Auctions
@@ -57,10 +80,10 @@ function App() {
           <div>
             <Products
               handleLeftDiv={handleLeftDiv}
-              handlePrice={handlePrice}
+              // handlePrice={handlePrice}
             ></Products>
           </div>
-          <div className="w-[30%] text-center">
+          <div className="lg:w-[30%] text-center">
             <div className="flex mb-16 justify-center items-center mt-6">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -80,6 +103,7 @@ function App() {
                 Favorite Items
               </h1>
             </div>
+
             <div id="no-item-container">
               <h1 className="text-[#000000] text-[26px] font-medium">
                 No favorites yet
@@ -90,48 +114,13 @@ function App() {
             </div>
             <div>
               {favorite.map((fav) => (
-                // left Div
-
-                <div key={fav.id} className=" sora flex gap-5 text-left mb-5">
-                  <div>
-                    <img className="w-30 rounded-lg" src={fav.image} alt="" />
-                  </div>
-                  <div>
-                    <h1 className="sora text-[#0E2954] font-normal text-base mb-2">
-                      {fav.title}
-                    </h1>
-                    <div className="flex justify-around">
-                      <h1 className="sora text-[#0E2954] font-normal text-base">
-                        {fav.currentBidPrice}
-                      </h1>
-                      <h1 className="sora text-[#0E2954] font-normal text-base">
-                        Bids:{fav.bidsCount}
-                      </h1>
-                    </div>
-                  </div>
-
-                  <button className="btn">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={1.5}
-                      stroke="currentColor"
-                      className="size-6"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M12 9.75 14.25 12m0 0 2.25 2.25M14.25 12l2.25-2.25M14.25 12 12 14.25m-2.58 4.92-6.374-6.375a1.125 1.125 0 0 1 0-1.59L9.42 4.83c.21-.211.497-.33.795-.33H19.5a2.25 2.25 0 0 1 2.25 2.25v10.5a2.25 2.25 0 0 1-2.25 2.25h-9.284c-.298 0-.585-.119-.795-.33Z"
-                      />
-                    </svg>
-                  </button>
-                </div>
+                <Favorite handleRemove={handleRemove} fav={fav}></Favorite>
               ))}
             </div>
             <div>
               <h1 className="text-[#000000] text-[26px] font-normal">
-                Total bids Amount:${oldPrice}
+                Total Bids Amount:{" "}
+                <span className="font-bold">${oldPrice}</span>
               </h1>
             </div>
           </div>

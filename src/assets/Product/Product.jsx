@@ -1,10 +1,10 @@
 import React from "react";
 
 const Product = ({ product, handleLeftDiv }) => {
-  // console.log(product);
+  // console.log(product.id);
   return (
     <>
-      <tr className="">
+      <tr className="items-center ">
         <td>
           <div className="flex items-center gap-3">
             <div className="avatar">
@@ -13,16 +13,20 @@ const Product = ({ product, handleLeftDiv }) => {
               </div>
             </div>
             <div>
-              <div className="font-bold">{product.title}</div>
+              <div className="font-bold text-base">{product.title}</div>
             </div>
           </div>
         </td>
-        <td>{product.currentBidPrice}</td>
-        <td>{product.timeLeft}</td>
-        <th>
+        <td className="text-sm font-medium">{product.currentBidPrice}</td>
+        <td className="text-sm font-medium mt-3 hidden md:block">
+          {product.timeLeft}
+        </td>
+        <td>
           <button
             id={product.id}
-            onClick={() => handleLeftDiv(product, product.currentBidPrice)}
+            onClick={() =>
+              handleLeftDiv(product, product.currentBidPrice, product.id)
+            }
             className="cursor-pointer "
           >
             <svg
@@ -40,7 +44,7 @@ const Product = ({ product, handleLeftDiv }) => {
               />
             </svg>
           </button>
-        </th>
+        </td>
       </tr>
     </>
   );

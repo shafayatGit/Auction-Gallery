@@ -12,12 +12,7 @@ const Footer = () => {
         <p>Win.</p>
         <p>Own.</p>
       </div>
-      <div className="flex gap-16 text-[#000000] text-[18px] justify-center">
-        <p>Home</p>
-        <p>Auctions</p>
-        <p>Categories</p>
-        <p>How To Works</p>
-      </div>
+
       <div>
         <p className="text-[#000000] text-[18px] justify-center">
           © 2025 AuctionHub. All rights reserved.
