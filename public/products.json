@@ -1,0 +1,65 @@
+[
+    {
+      "id": 1,
+      "title": "Vintage Leica M3 Camera",
+      "description": "A classic film camera known for its precision and design.",
+      "currentBidPrice": 2850,
+      "timeLeft": "2 Days left",
+      "bidsCount": 0,
+      "image": "https://i.ibb.co.com/5XqF9Sny/Bid1-min.png"
+    },
+    {
+      "id": 2,
+      "title": "1965 Gibson SG Standard Electric Guitar",
+      "description": "An iconic electric guitar with a rich rock heritage.",
+      "currentBidPrice": 2850,
+      "timeLeft": "2 Days left",
+      "bidsCount": 0,
+      "image": "https://i.ibb.co.com/Nd7fCL8S/Bid2-min.png"
+    },
+    {
+      "id": 3,
+      "title": "Original Apple Macintosh 128K (1984)",
+      "description": "The first Macintosh computer released by Apple in 1984.",
+      "currentBidPrice": 2850,
+      "timeLeft": "2 Days left",
+      "bidsCount": 0,
+      "image": "https://i.ibb.co.com/8n5nTrDS/Bid3-min.png"
+    },
+    {
+      "id": 4,
+      "title": "Rolex Submariner 16610",
+      "description": "A timeless diver's watch from Rolex, model 16610.",
+      "currentBidPrice": 2850,
+      "timeLeft": "2 Days left",
+      "bidsCount": 0,
+      "image": "https://i.ibb.co.com/YBjCLztC/Bid4-min.png"
+    },
+    {
+      "id": 5,
+      "title": "First Edition 'The Great Gatsby' by F. Scott Fitzgerald",
+      "description": "Rare first edition of the classic American novel.",
+      "currentBidPrice": 2850,
+      "timeLeft": "2 Days left",
+      "bidsCount": 0,
+      "image": "https://i.ibb.co.com/pvSNnx1w/Bid5-min.png"
+    },
+    {
+      "id": 6,
+      "title": "Mid-Century Modern Eames Lounge Chair",
+      "description": "Iconic furniture design by Charles and Ray Eames.",
+      "currentBidPrice": 2850,
+      "timeLeft": "2 Days left",
+      "bidsCount": 0,
+      "image": "https://i.ibb.co.com/qF4tjCBX/Bid6-min.png"
+    },
+    {
+      "id": 7,
+      "title": "Banksy Original Screen Print",
+      "description": "Authentic screen print artwork by the artist Banksy.",
+      "currentBidPrice": 2850,
+      "timeLeft": "2 Days left",
+      "bidsCount": 0,
+      "image": "https://i.ibb.co.com/j9G2QT8c/Bid7-min.png"
+    }
+  ]
