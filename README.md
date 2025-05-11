@@ -1,12 +1,26 @@
-# React + Vite
+# 🖼️ Auction Gallery
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Auction Gallery** is a modern, React-based web application that showcases products in an auction-style layout. It features a static UI (Navbar, Hero section, and Footer) with a dynamic product listing section powered by a local JSON file.
 
-Currently, two official plugins are available:
+## 🚀 Live Preview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+_(https://auction-gallery-domain.netlify.app/)_
 
-## Expanding the ESLint configuration
+## ✨ Features
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- 🔗 Static layout: **Navbar**, **Hero Banner**, and **Footer**
+- 📊 **Active Gallery** section (dynamic):
+  - Products loaded from a local `JSON` file
+  - Displays: Image, Name, Current Bid, Time Left, and **Add to Favorite** button
+- ❤️ **Favorites Section**:
+  - Shows added items with full details
+  - Allows removing items from favorites
+  - Recalculates **Total Bid Price** in real time
+
+## 🛠️ Tech Stack
+
+- **React**
+- **JavaScript (ES6+)**
+- **Tailwind CSS**
+- **HTML5**
+- **JSON** (for data source)
